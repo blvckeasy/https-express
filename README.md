@@ -13,16 +13,26 @@ Download all the packages in the package.json file.
 $ npm install
 ```
 
+create a folder and enter it inside
+```bash
+$ mkdir cert
+
+$ cd ./cert
+```
+
 and download openssl [here.](https://www.openssl.org/source/)
 
 ```bash
-$ cd ./cert
-
 $ openssl genrsa -out key.pem
 
 $ openssl req -new -key key.pem -out csr.pem
 
 $ openssl x509 -req -days 365 -in csr.pem -signkey key.pem -out cert.pem
+```
+
+change directory back
+```bash
+$ cd ../
 ```
 
 If you are in production, run the app as follows.
